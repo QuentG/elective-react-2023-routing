@@ -1,17 +1,25 @@
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, NavLink, Outlet } from 'react-router-dom'
+import { AuthContext } from '../provider/AuthProvider'
 
 const Layout = () => {
+    const { state } = useContext(AuthContext)
+
     return (
         <div>
             <nav>
                 <ul>
                     <li>
-                        <Link to='/'>Home</Link>
+                        <NavLink to='/'>Home</NavLink>
                     </li>
                     <li>
-                        <Link to='/blog'>Blog</Link>
+                        <NavLink to='/blog'>Blog</NavLink>
                     </li>
+                    {state.isLogged && (
+                        <li>
+                            <NavLink to='/settings'>Settings</NavLink>
+                        </li>
+                    )}
                 </ul>
             </nav>
 
