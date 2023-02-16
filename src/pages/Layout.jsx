@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import { AuthContext } from '../provider/AuthProvider'
 
 const Layout = () => {
